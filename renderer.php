@@ -14,24 +14,13 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * Renderer for the immediatefeedback question behaviour adapted for qtype_aitext.
- *
- * @package    qbehaviour_immediate_for_aitext
- * @copyright  2026 ISB Bayern
- * @author     Paola Maneggia
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot . '/question/behaviour/immediatefeedback/renderer.php');
 
 /**
- * Renderer for the immediatefeedback question behaviour adapted for AI text grading.
+ * Renderer for the immediate feedback question behaviour adapted for qtype_aitext.
  *
- * Extends the immediatefeedback renderer to display AI-generated feedback when
- * no teacher manual comment is present.
  *
  * @package    qbehaviour_immediate_for_aitext
  * @copyright  2026 ISB Bayern
@@ -41,11 +30,11 @@ require_once($CFG->dirroot . '/question/behaviour/immediatefeedback/renderer.php
 class qbehaviour_immediate_for_aitext_renderer extends qbehaviour_immediatefeedback_renderer {
 
     /**
-     * Display the manual comment, preferring teacher comment over AI comment.
-     *
+     * Override manual_comment_view to display as manual comment the ai generated feedback, as long
+     * as there is no manual grading. Based on manual_comment_view in qbehaviour_renderer.
      * @param question_attempt $qa a question attempt.
      * @param question_display_options $options controls what should and should not be displayed.
-     * @return string HTML fragment.
+     * @return string HTML fragment
      */
     public function manual_comment_view(question_attempt $qa, question_display_options $options) {
         $output = '';

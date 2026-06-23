@@ -14,20 +14,12 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * Question behaviour type for immediatefeedback behaviour with AI text grading.
- *
- * @package    qbehaviour_immediate_for_aitext
- * @copyright  2026 ISB Bayern
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
 defined('MOODLE_INTERNAL') || die();
 
 require_once(__DIR__ . '/../immediatefeedback/behaviourtype.php');
 
 /**
- * Question behaviour type information for immediatefeedback behaviour with AI text grading.
+ * Question behaviour type information for the immediate feedback behaviour adapted for qtype_aitext.
  *
  * This is not an archetypal behaviour — it is selected automatically by
  * qtype_aitext_question::make_behaviour() and should not appear in the

@@ -126,6 +126,19 @@ class qbehaviour_immediate_for_aitext extends qbehaviour_immediatefeedback {
         }
     }
 
+    /**
+     * Dispatch the processing of a pending step to the appropriate handler.
+     *
+     * If the pending step contains a 'spellcheckedit' behaviour variable, this
+     * means a teacher has submitted an edited spellcheck correction via the
+     * dynamic form. In that case, processing is delegated to
+     * process_spellcheck_edit(). Otherwise, the parent immediatefeedback
+     * process_action() handles the step normally (save, submit, finish, comment).
+     *
+     * @param question_attempt_pending_step $pendingstep a partially initialised step
+     *      containing all the information about the action being performed.
+     * @return bool question_attempt::KEEP or question_attempt::DISCARD.
+     */
     public function process_action(question_attempt_pending_step $pendingstep) {
         if ($pendingstep->has_behaviour_var('spellcheckedit')) {
             return $this->process_spellcheck_edit($pendingstep);
