@@ -50,16 +50,6 @@ require_once($CFG->dirroot . '/question/behaviour/immediatefeedback/behaviour.ph
 class qbehaviour_immediate_for_aitext extends qbehaviour_immediatefeedback {
 
     /**
-     * Only compatible with qtype_aitext_question instances.
-     *
-     * @param question_definition $question the question.
-     * @return bool true if this behaviour can be used with this question type.
-     */
-    public function is_compatible_question(question_definition $question): bool {
-        return $question instanceof qtype_aitext_question;
-    }
-
-    /**
      * Process the submit action.
      *
      * Calls the parent process_submit() which invokes grade_response() on the
