@@ -28,7 +28,7 @@ and write them to the step:
 Teacher manual comments (`comment`, `mark`) take priority over AI vars in the
 renderer.
 
-The question behaviour output has not changed since the addtion of the dependency on this behaviour.
+The question behaviour output has not changed since the addition of the dependency on this behaviour.
 
 ![AI text behaviour screenshot](docs/images/aitext_behaviour.png)
 
